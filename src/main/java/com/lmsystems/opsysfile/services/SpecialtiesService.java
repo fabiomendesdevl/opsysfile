@@ -25,4 +25,8 @@ public class SpecialtiesService {
         Optional<Specialties> obj = repository.findById(id);
         return obj.get();
     }
+
+    public void deleteById(Long id){
+        repository.deleteById(id);
+    }
 }

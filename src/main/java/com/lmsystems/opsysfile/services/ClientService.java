@@ -24,5 +24,9 @@ public class ClientService {
             Optional<Client> obj = repository.findById(id);
             return obj.get();
     }
+
+    public void deleteId(Long id){
+        repository.deleteById(id);
+    }
 }
 
