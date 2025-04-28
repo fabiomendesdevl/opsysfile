@@ -34,4 +34,10 @@ public class SpecialtiesResource {
         service.deleteById(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PostMapping
+    public ResponseEntity<Specialties> insertSpecialties(@RequestBody Specialties specialties){
+        service.insertSpecialties(specialties);
+        return ResponseEntity.ok().body(specialties);
+    }
 }

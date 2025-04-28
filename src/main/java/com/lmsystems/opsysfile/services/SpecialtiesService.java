@@ -29,4 +29,8 @@ public class SpecialtiesService {
     public void deleteById(Long id){
         repository.deleteById(id);
     }
+
+    public Specialties insertSpecialties(Specialties specialties){
+       return repository.save(specialties);
+    }
 }

@@ -36,4 +36,10 @@ public class ClientResource {
         service.deleteId(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PostMapping
+    public ResponseEntity<Client> insertClient(@RequestBody Client client){
+        client = service.insertClient(client);
+        return ResponseEntity.ok().body(client);
+    }
 }
