@@ -2,9 +2,11 @@ package com.lmsystems.opsysfile.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.antlr.v4.runtime.misc.NotNull;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 @NoArgsConstructor
@@ -14,7 +16,7 @@ import java.util.Date;
 @EqualsAndHashCode
 @Entity
 @Table(name = "tb_cliente")
-public class client {
+public class Client implements Serializable {
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -37,4 +39,7 @@ public class client {
     private Integer number;
     @Column(nullable = false)
     private String phone;
+
+//    @OneToMany
+//    private List<Specialties> specialtiesList = new ArrayList<>();
 }

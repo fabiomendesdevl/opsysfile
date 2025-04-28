@@ -3,7 +3,9 @@ package com.lmsystems.opsysfile.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -12,7 +14,7 @@ import java.util.Date;
 @EqualsAndHashCode
 @Entity
 @Table(name = "tb_specialties")
-public class specialties {
+public class Specialties implements Serializable {
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -20,7 +22,9 @@ public class specialties {
     @Column(nullable = false)
     private String nameSpecialties;
     @Column(nullable = false)
-    private String description;
-    @Column(nullable = false)
     private Date Date;
+
+//    @ManyToOne
+//    @JoinColumn(name = "client_id")
+//    private Client clientList;
 }
