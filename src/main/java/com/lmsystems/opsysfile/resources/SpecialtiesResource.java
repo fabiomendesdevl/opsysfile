@@ -6,10 +6,12 @@ import com.lmsystems.opsysfile.services.SpecialtiesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping(value = "/specialties")
@@ -22,5 +24,11 @@ public class SpecialtiesResource {
     public ResponseEntity<List<Specialties>> findAll(){
         List<Specialties> obj = service.findAll();
         return ResponseEntity.ok().body(obj);
+    }
+
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<Specialties> findById(@PathVariable Long id){
+            Specialties obj = service.findById(id);
+            return ResponseEntity.ok().body(obj);
     }
 }

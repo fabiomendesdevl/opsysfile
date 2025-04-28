@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SpecialtiesService {
@@ -18,5 +19,10 @@ public class SpecialtiesService {
     public List<Specialties> findAll(){
         List<Specialties> obj = repository.findAll();
         return obj;
+    }
+
+    public Specialties findById(Long id){
+        Optional<Specialties> obj = repository.findById(id);
+        return obj.get();
     }
 }
