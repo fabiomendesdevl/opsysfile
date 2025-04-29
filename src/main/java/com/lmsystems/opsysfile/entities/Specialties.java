@@ -1,5 +1,6 @@
 package com.lmsystems.opsysfile.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -24,7 +25,8 @@ public class Specialties implements Serializable {
     @Column(nullable = false)
     private Date Date;
 
-//    @ManyToOne
-//    @JoinColumn(name = "client_id")
-//    private Client clientList;
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "client_id")
+    private Client clientList;
 }

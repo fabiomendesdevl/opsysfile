@@ -1,12 +1,11 @@
 package com.lmsystems.opsysfile.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 
 @NoArgsConstructor
@@ -40,6 +39,6 @@ public class Client implements Serializable {
     @Column(nullable = false)
     private String phone;
 
-//    @OneToMany
-//    private List<Specialties> specialtiesList = new ArrayList<>();
+    @OneToMany
+    private List<Specialties> specialtiesList = new ArrayList<>();
 }
