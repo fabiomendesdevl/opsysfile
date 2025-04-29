@@ -33,4 +33,16 @@ public class SpecialtiesService {
     public Specialties insertSpecialties(Specialties specialties){
        return repository.save(specialties);
     }
+
+    public Specialties updateSpeacialties(Long id, Specialties specialties){
+        Specialties entity = repository.getReferenceById(id);
+        updateData(entity, specialties);
+        return repository.save(entity);
+
+    }
+
+    private void updateData(Specialties entity, Specialties specialties) {
+        entity.setDate(specialties.getDate());
+
+    }
 }
